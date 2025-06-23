@@ -1,0 +1,20 @@
+# テスト環境の特有の設定
+server:
+  port: ${getenv "SERVER_PORT:8081"}
+  timeout:
+    api: ${getenv "SERVER_TIMEOUT_API:30"}
+    db: ${getenv "SERVER_TIMEOUT_DB:5"}
+
+# データベースの接続情報
+database:
+  host: ${getenv "DB_HOST:localhost"}
+  port: ${getenv "DB_PORT:3306"}
+  user: ${getenv "DB_USER:test"}
+  password: ${getenv "DB_PASSWORD:test"}
+  dbname: ${getenv "DB_NAME:app"}
+  driver: ${getenv "DB_DRIVER:mysql"}
+
+# テストコードの確認用設定
+test:
+  check: ${getenv "TEST_CHECK:true"}
+  normal: true
